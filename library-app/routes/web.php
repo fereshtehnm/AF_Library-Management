@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('Book', [\App\Http\Controllers\Book\showController::class, 'show'])->name('book');
+Route::get('Manager', [\App\Http\Controllers\Manager\showController::class, 'show'])->name('manager');
+Route::get('Staff', [\App\Http\Controllers\Staff\showController::class, 'show'])->name('staff');
+
