@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Staff;
 
 use App\Http\Controllers\Controller;
+use App\Models\Staff;
 use Illuminate\Http\Request;
 
-class showController extends Controller
+class ShowController extends Controller
 {
     public function show()
     {
-        return view("staff.index");
+        $staff = Staff::paginate(10);
+        return view("index", compact("staff"));
     }
 }

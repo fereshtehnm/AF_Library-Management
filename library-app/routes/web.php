@@ -2,8 +2,10 @@
 
 
 use App\Http\Controllers\Book;
+use App\Http\Controllers\Book\ShowController as BookShowController;
+use App\Http\Controllers\Staff\ShowController as StaffShowController;
+use App\Http\Controllers\Manager\ShowController as ManagerShowController;
 
-use App\Http\Controllers\Book\showController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,7 +33,12 @@ Route::middleware('auth')->group(function () {
 });
 
 // Route::get('Manager', [showController::class,'show']);
-Route::get('/', [showController::class,'show']);
+Route::get('/', [BookShowController::class, 'show']);
+Route::get('book', [BookShowController::class,'show'])->name('book');
+Route::get('staff', [StaffShowController::class,'show'])->name('staff');
+Route::get('manager', [ManagerShowController::class,'show'])->name('manager');
+
+// Route::get('manager', [\App\Http\Controllers\Manager\showController::class,'show'])->name('manager');
 
 
 require __DIR__.'/auth.php';
