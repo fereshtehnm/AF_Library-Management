@@ -10,7 +10,7 @@ class ShowController extends Controller
 {
     public function show()
     {
-        $staff = Staff::paginate(10);
-        return view("index", compact("staff"));
+        $staffs = Staff::paginate(10);
+        return view("staff.index", compact("staffs"));
     }
 }
