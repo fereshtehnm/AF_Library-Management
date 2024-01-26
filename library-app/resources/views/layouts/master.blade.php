@@ -129,17 +129,17 @@
                 <ul class="menu-inner py-1">
                     <!-- Dashboards -->
                     <li class="menu-item">
-                        <a href="./" class="menu-link menu-toggle">
+                        <a href="{{ route('home') }}" class="menu-link menu-toggle">
                             <div data-i18n="Home">Home</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="./books" class="menu-link menu-toggle">
+                        <a href="{{ route('book') }}" class="menu-link menu-toggle">
                             <div data-i18n="Edit Books">Edit Books</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="./staff" class="menu-link menu-toggle">
+                        <a href="{{ route('staff') }}" class="menu-link menu-toggle">
                             <div data-i18n="Edit Staff">Edit Staff</div>
                         </a>
                     </li>

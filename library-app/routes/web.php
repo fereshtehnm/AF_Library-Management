@@ -9,18 +9,6 @@ use App\Http\Controllers\Manager\ShowController as ManagerShowController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -33,7 +21,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // Route::get('Manager', [showController::class,'show']);
-Route::get('/', [BookShowController::class, 'show']);
+Route::get('/', [BookShowController::class, 'show'])->name('home');
 Route::get('book', [BookShowController::class,'show'])->name('book');
 Route::get('staff', [StaffShowController::class,'show'])->name('staff');
 Route::get('manager', [ManagerShowController::class,'show'])->name('manager');
