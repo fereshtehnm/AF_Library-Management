@@ -271,8 +271,6 @@
                             </li>
                             <!-- Quick links -->
 
-
-
                             <!-- User -->
                             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
