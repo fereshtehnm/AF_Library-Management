@@ -8,7 +8,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Library|Manager</title>
+    <title>Library</title>
 
     <meta name="description" content="" />
 
@@ -135,12 +135,12 @@
                     </li>
                     <li class="menu-item">
                         <a href="./books" class="menu-link menu-toggle">
-                            <div data-i18n="Home">Edit Books</div>
+                            <div data-i18n="Edit Books">Edit Books</div>
                         </a>
                     </li>
                     <li class="menu-item">
                         <a href="./staff" class="menu-link menu-toggle">
-                            <div data-i18n="Home">Edit Staff</div>
+                            <div data-i18n="Edit Staff">Edit Staff</div>
                         </a>
                     </li>
                 </ul>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <!-- Bootstrap Table with Header - Light -->
+                        @foreach ($staffs as $staff)
                         <div class="card">
                             <h5 class="card-header">Staff in library</h5>
                             <div class="table-responsive text-nowrap">
