@@ -1,6 +1,5 @@
 <?php
-
-namespace App\Http\Controllers\Manager;
+namespace App\Http\Controllers\Staff;
 
 use App\Http\Controllers\Controller;
 use App\Models\Staff;
@@ -30,11 +29,15 @@ class CreateController extends Controller
             'email' => $request->input('email'),
             'password' => bcrypt($request->input('password')),
         ]);
-        $staff->assignR
+
         // Save the staff record
         $staff->save();
 
-        // Redirect to a success page or perform other actions as needed
         return redirect()->route('staff.index')->with('success', 'Staff created successfully');
+    }
+    public function index()
+    {
+        // You can leave this method empty or redirect to another route if needed
+        return view('staff.index');
     }
 }
