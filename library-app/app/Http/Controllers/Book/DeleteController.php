@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class DeleteController extends Controller
 {
-    public function delete(Book $books)
+    public function delete(Book $book)
     {
-        $books->delete();
+        $book->delete();
         return redirect()->back();
     }
 }
