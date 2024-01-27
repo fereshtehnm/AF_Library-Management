@@ -1,15 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Staff;
+
+namespace App\Http\Controllers\Book;
 
 use App\Http\Controllers\Controller;
-use App\Models\Staff;
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class DeleteController extends Controller
 {
-    public function delete(Staff $staff){
-        $staff->delete();
+    public function delete(Book $books)
+    {
+        $books->delete();
         return redirect()->back();
     }
 }

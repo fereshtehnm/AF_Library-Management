@@ -30,7 +30,6 @@ class CreateController extends Controller
             'password' => bcrypt($request->input('password')),
         ]);
 
-        // Save the staff record
         $staff->save();
 
         return redirect()->route('staff.index')->with('success', 'Staff created successfully');

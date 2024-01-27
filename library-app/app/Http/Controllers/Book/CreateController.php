@@ -1,9 +1,10 @@
 <?php
+
 namespace App\Http\Controllers\Book;
 
 use App\Http\Controllers\Controller;
-use App\Models\Book;
 use Illuminate\Http\Request;
+use App\Models\Book;
 
 class CreateController extends Controller
 {
@@ -34,13 +35,14 @@ class CreateController extends Controller
         //     'quantity' => $request->input('quantity')
         // ]);
         $books = Book::create([
-            'name'=> $request->name,
-            'description'=> $request->description,
-            'categories'=> $request->categories,
-            'price'=> $request->price,
-            'author'=> $request->author,
-            'quantity'=> $request->quantity,
+            'name' => $request->name,
+            'description' => $request->description,
+            'categories' => $request->categories,
+            'price' => $request->price,
+            'author' => $request->author,
+            'quantity' => $request->quantity,
         ]);
+        $books->save();
         return redirect()->route('book');
     }
     public function index()
@@ -49,3 +51,4 @@ class CreateController extends Controller
         return view('book.index');
     }
 }
+
