@@ -6,6 +6,7 @@ use App\Http\Controllers\Book;
 use App\Http\Controllers\Book\ShowController as BookShowController;
 use App\Http\Controllers\Book\CreateController as BookCreateController;
 use App\Http\Controllers\Book\editController as BookEditController;
+use App\Http\Controllers\Book\updateController as BookUpdateController;
 use App\Http\Controllers\Book\DeleteController as BookDeleteController;
 
 use App\Http\Controllers\Staff\ShowController as StaffShowController;
@@ -55,7 +56,7 @@ Route::prefix('book')->group(function () {
     Route::post('/store', [BookCreateController::class, 'store'])->name('book.store');
     Route::get('/index', [BookCreateController::class, 'index'])->name('book.index');
     Route::get('/edit/{id}', [BookEditController::class, 'edit'])->name('book.edit');
-    Route::put('/update/{id}', [BookEditController::class, 'update'])->name('book.update');
+    Route::put('/update/{id}', [BookUpdateController::class, 'update'])->name('book.update');
     Route::delete('/delete/{book}', [BookDeleteController::class, 'delete'])->name('book.delete');
 });
 
