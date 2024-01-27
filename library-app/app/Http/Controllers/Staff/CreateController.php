@@ -40,4 +40,6 @@ class CreateController extends Controller
         // You can leave this method empty or redirect to another route if needed
         return view('staff.index');
     }
+
+    
 }

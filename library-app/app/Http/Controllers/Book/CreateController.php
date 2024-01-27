@@ -25,18 +25,23 @@ class CreateController extends Controller
         ]);
 
         // Create a new staff instance
-        $books = new Book([
-            'name' => $request->input('name'),
-            'description' => $request->input('description'),
-            'categories' => $request->input('categories'),
-            'price' => $request->input('price'),
-            'author' => $request->input('author'),
-            'quantity' => $request->input('quantity')
+        // $books = new Book([
+        //     'name' => $request->input('name'),
+        //     'description' => $request->input('description'),
+        //     'categories' => $request->input('categories'),
+        //     'price' => $request->input('price'),
+        //     'author' => $request->input('author'),
+        //     'quantity' => $request->input('quantity')
+        // ]);
+        $books = Book::create([
+            'name'=> $request->name,
+            'description'=> $request->description,
+            'categories'=> $request->categories,
+            'price'=> $request->price,
+            'author'=> $request->author,
+            'quantity'=> $request->quantity,
         ]);
-
-        $books->save();
-
-        return redirect()->route('book.index')->with('success', 'Book created successfully');
+        return redirect()->route('book');
     }
     public function index()
     {
