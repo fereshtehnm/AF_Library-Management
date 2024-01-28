@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 @section('content')
     <div class="row mb-5">
   <!-- Help Center Header -->

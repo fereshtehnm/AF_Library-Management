@@ -1,7 +1,8 @@
-
+@extends('layouts.app')
+@section('content')
     <div class="row mb-5">
-        <!-- Help Center Header -->
-    <div class="help-center-header d-flex flex-column justify-content-center align-items-center">
+  <!-- Help Center Header -->
+  <div class="help-center-header d-flex flex-column justify-content-center align-items-center">
                   <h3 class="text-center text-primary fw-semibold">Hello, how can we help?</h3>
                   <p class="text-center px-3 mb-0">Common troubleshooting topics:</p>
                   <div class="input-wrapper my-3 input-group input-group-lg input-group-merge px-5">
@@ -93,4 +94,4 @@
                 </div>
                 <!-- /Help Area -->
     </div>
-
+@endsection
