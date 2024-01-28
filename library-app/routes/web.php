@@ -3,6 +3,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Book;
+use App\Http\Controllers\Home\ShowController as HomeShowController;
+
 use App\Http\Controllers\Book\ShowController as BookShowController;
 use App\Http\Controllers\Book\CreateController as BookCreateController;
 use App\Http\Controllers\Book\editController as BookEditController;
@@ -32,7 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/', [BookShowController::class, 'show'])->name('home');
+Route::get('/', [HomeShowController::class, 'index'])->name('index');
+
 Route::get('manager', [ManagerShowController::class, 'show'])->name('manager');
 
 Route::get('staff', [StaffShowController::class, 'show'])->name('staff');
