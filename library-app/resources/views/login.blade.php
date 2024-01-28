@@ -58,7 +58,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>مدیریت بازار مج</title>
+    <title>Ù…Ø¯ÛŒØ±ÛŒØª Ø¨Ø§Ø²Ø§Ø± Ù…Ø¬</title>
 
     <!-- Icons -->
     <link rel="stylesheet" href="{{asset('assets/vendor/fonts/materialdesignicons.css')}}" />
@@ -153,7 +153,7 @@
                 <!-- /Logo -->
 
                 <div class="card-body mt-2">
-                    <h4 class="mb-4 fw-semibold">خوش آمدید به مدیریت بازار مج 👋</h4>
+                    <h4 class="mb-4 fw-semibold">Ø®ÙˆØ´ Ø¢Ù…Ø¯ÛŒØ¯ Ø¨Ù‡ Ù…Ø¯ÛŒØ±ÛŒØª Ø¨Ø§Ø²Ø§Ø± Ù…Ø¬ ðŸ‘‹</h4>
 
                     <form id="formAuthentication" class="mb-3" action="{{route('login.form')}}" method="POST">
                         @csrf
@@ -163,9 +163,9 @@
                                 class="form-control"
                                 id="email"
                                 name="email"
-                                placeholder="ایمیل خود را وارد کنید"
+                                placeholder="Ø§ÛŒÙ…ÛŒÙ„ Ø®ÙˆØ¯ Ø±Ø§ ÙˆØ§Ø±Ø¯ Ú©Ù†ÛŒØ¯"
                                 autofocus />
-                            <label for="email">آدرس ایمیل</label>
+                            <label for="email">Ø¢Ø¯Ø±Ø³ Ø§ÛŒÙ…ÛŒÙ„</label>
                         </div>
                         <div class="mb-3">
                             <div class="form-password-toggle">
@@ -177,8 +177,8 @@
                                             class="form-control"
                                             name="password"
                                             placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                                            aria-describedby="پسورد" />
-                                        <label for="password">پسورد</label>
+                                            aria-describedby="Ù¾Ø³ÙˆØ±Ø¯" />
+                                        <label for="password">Ù¾Ø³ÙˆØ±Ø¯</label>
                                     </div>
                                     <span class="input-group-text cursor-pointer"><i class="mdi mdi-eye-off-outline"></i></span>
                                 </div>
@@ -188,12 +188,12 @@
                             <div class="form-check">
                                 <label for="remember_me" class="inline-flex items-center">
                                     <input class="form-check-input" type="checkbox" id="remember_me" name="remember" />
-                                    <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">مرا بخاطر بسپار</span>
+                                    <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">Ù…Ø±Ø§ Ø¨Ø®Ø§Ø·Ø± Ø¨Ø³Ù¾Ø§Ø±</span>
                                 </label>
                             </div>
                         </div>
                         <div class="flex items-center justify-end mt-4">
-                            <button class="btn btn-primary d-grid w-100" type="submit">ورود</button>
+                            <button class="btn btn-primary d-grid w-100" type="submit">ÙˆØ±ÙˆØ¯</button>
                         </div>
                     </form>
 
