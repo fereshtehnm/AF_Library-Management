@@ -1,9 +1,42 @@
 @extends('layouts.app')
 @section('content')
-    <div class="row mb-5">
+    <div class="row mb-50 ">
+    <nav class="navbar navbar-expand-lg bg-secondary">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="javascript:void(0)">  Library Managment System </a>
+                    <button
+                      class="navbar-toggler"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#navbar-ex-8">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbar-ex-8">
+                      <div class="navbar-nav me-auto">
+                        <a class="nav-item nav-link active" href="{{ url('/home')}}">Home</a>
+                        <a class="nav-item nav-link" href="{{ url('/book')}}">About Books</a>
+                        <a class="nav-item nav-link" href="{{ url('/library')}}">Our Library</a>
+                      </div>
+                      <ul class="navbar-nav ms-lg-auto">
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{ url('/profile')}}"
+                            ><i class="tf-icons navbar-icon mdi mdi-account-outline me-1"></i>Profile</a
+                          >
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{ url('/login')}}"><i class="tf-icons navbar-icon mdi mdi-lock-outline me-1"></i>SignIn | SignUp</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
   <!-- Help Center Header -->
-  <div class="help-center-header d-flex flex-column justify-content-center align-items-center">
-                  <h3 class="text-center text-primary fw-semibold">Hello, how can we help?</h3>
+        <div class="container-xxl flex-grow-1 container-p-y">
+              <div class="card">
+                <div class="help-center-header d-flex flex-column justify-content-center align-items-center">
+                  <h3 class="text-center text-primary pt-50">Hello, how can we help?</h3>
                   <p class="text-center px-3 mb-0">Common troubleshooting topics:</p>
                   <div class="input-wrapper my-3 input-group input-group-lg input-group-merge px-5">
                     <span class="input-group-text" id="basic-addon1"><i class="mdi mdi-magnify mdi-20px"></i></span>
@@ -93,5 +126,37 @@
                   </div>
                 </div>
                 <!-- /Help Area -->
+</div>
+</div>
+<!-- Footer -->
+<footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl">
+                <div
+                  class="footer-container d-flex align-items-center justify-content-between py-3 flex-md-row flex-column">
+                  <div class="mb-2 mb-md-0">
+                    
+                  </div>
+                  <div>
+                    <a href="https://themeforest.net/licenses/standard" class="footer-link me-4" target="_blank"
+                      >Email Address: Library@gmail.com |</a
+                    >
+                    <a href="https://1.envato.market/pixinvent_portfolio" target="_blank" class="footer-link me-4"
+                      >Main Branches Address: Golsar street |</a
+                    >
+
+                    <a
+                      href="https://demos.pixinvent.com/materialize-html-admin-template/documentation/"
+                      target="_blank"
+                      class="footer-link me-4"
+                      >Telephone Number:99012202</a
+                    >
+
+                  
+                  </div>
+                </div>
+              </div>
+            </footer>
+            <!-- / Footer -->
     </div>
+    
 @endsection
