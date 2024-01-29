@@ -52,9 +52,7 @@
                                 data-bs-toggle="modal" data-bs-target="#dateTimeModal">Borrow book</button>
                             @auth
 
-                                <div class="w-32 m-8">
-
-                                        <div class="modal fade" id="dateTimeModal" tabindex="-1"
+                               <div class="modal fade" id="dateTimeModal" tabindex="-1"
                                             aria-labelledby="dateTimeModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
