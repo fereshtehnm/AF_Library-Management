@@ -84,14 +84,14 @@
                 <!-- Hero -->
                 <div class="p-5 text-center bg-image rounded-3"
                     style="
-background-image:  url('/assets/img/lib.avif');
+background-image:  url('/assets/img/lib.jpg');
 height: 400px;
 ">
-                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-                        <div class="d-flex justify-content-center align-items-center h-100">
-                            <div class="text-white">
-                                <h1 class="mb-3">AF Library</h1>
-                                <h4 class="mb-3">Explore books to infinity</h4>
+                    <div class="mask " style="background-color: rgba(0, 0, 0, 0.2);">
+                        <div class=" mt-50 d-flex justify-content-center align-items-center h-100">
+                            <div >
+                                <h1 class="mb-3 text-white">AF Library</h1>
+                                <h4 class="mb-3 text-white">Explore books to infinity</h4>
                             </div>
                         </div>
                     </div>
