@@ -4,8 +4,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
     <title>FA library</title>
 
@@ -37,8 +36,8 @@
 
 <body>
 
-    <div class="position-relative">
-        <div class="authentication-wrapper authentication-basic container-p-y">
+    <div class="w-full">
+        <div class="container-p-y">
 
             <div class="row mb-50  ">
                 <nav class="navbar navbar-expand-lg bg-secondary fixed-top ">
@@ -56,7 +55,7 @@
                                 <a class="nav-item nav-link" href="{{ url('/library') }}">Our Library</a>
                             </div>
                             <ul class="navbar-nav ms-lg-auto">
-                                
+
                                 <li class="nav-item">
                                     @auth
                                         <a class="nav-link" href="{{ route('logout') }}"
@@ -85,18 +84,19 @@
                     <div class="mask " style="background-color: rgba(0, 0, 0, 0.2);">
                         <div class="  d-flex justify-content-center align-items-center h-100">
                             <div>
-                                <h1 class="mb-3 text-white">AF Library</h1>
+                                <h1 class="mb-3 text-white">FA Library</h1>
                                 <h4 class="mb-3 text-white">Explore books to infinity</h4>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Hero -->
-                
+
                 <!-- Help Center Header -->
                 <div class="container-xxl flex-grow-1 container-p-y">
                     <div class="card">
-                        <div class=" pt-5 help-center-header d-flex flex-column justify-content-center align-items-center">
+                        <div
+                            class=" pt-5 help-center-header d-flex flex-column justify-content-center align-items-center">
                             <h3 class="text-center text-primary ">Hello, how can we help?</h3>
                             <p class="text-center px-3 mb-0">Common troubleshooting topics:</p>
                             <div class="input-wrapper my-3 input-group input-group-lg input-group-merge px-5">
@@ -253,67 +253,66 @@
 
 
                         <!-- Help Area -->
-                       
-<div class="container-xl">
 
-<div class="row justify-content-center py-5 my-4">
+                        <div class="container-xl">
 
-  <div class="col-md-8 col-lg-6 text-center">
+                            <div class="row justify-content-center py-5 my-4">
 
-    <h4>Still need help?</h4>
+                                <div class="col-md-8 col-lg-6 text-center">
 
-    <p class="mb-4">
+                                    <h4>Still need help?</h4>
 
-    Our specialists are always happy to help. Contact us during standard
-                                            business hours or email
-                                            us 24/7 and we'll get back to you.
+                                    <p class="mb-4">
 
-    </p>
+                                        Our specialists are always happy to help. Contact us during standard
+                                        business hours or email
+                                        us 24/7 and we'll get back to you.
 
-    <div class="d-flex justify-content-center flex-wrap gap-4">
+                                    </p>
 
-      <a href="javascript:void(0);" class="btn btn-primary" onclick="showContactInfo()">Contact us</a>
+                                    <div class="d-flex justify-content-center flex-wrap gap-4">
 
-    </div>
+                                        <a href="javascript:void(0);" class="btn btn-primary"
+                                            onclick="showContactInfo()">Contact us</a>
 
-    <div id="contact-info" style="display:none;">
+                                    </div>
 
-      <p>Gmail: library1@gmail.com</p>
+                                    <div id="contact-info" style="display:none;">
 
-      <p>Phone: 123-456-7890</p>
+                                        <p>Gmail: library1@gmail.com</p>
 
-    </div>
+                                        <p>Phone: 123-456-7890</p>
 
-  </div>
+                                    </div>
 
-</div>
+                                </div>
 
-</div>
+                            </div>
+
+                        </div>
 
 
 
-<script>
+                        <script>
+                            function showContactInfo() {
 
-function showContactInfo() {
+                                var contactInfo = document.getElementById("contact-info");
 
-  var contactInfo = document.getElementById("contact-info");
+                                if (contactInfo.style.display === "none") {
 
-  if (contactInfo.style.display === "none") {
+                                    contactInfo.style.display = "block";
 
-    contactInfo.style.display = "block";
+                                } else {
 
-  } else {
+                                    contactInfo.style.display = "none";
 
-    contactInfo.style.display = "none";
+                                }
 
-  }
-
-}
-
-</script>
+                            }
+                        </script>
                         <!-- /Help Area -->
 
-                       
+
                     </div>
 
 

@@ -137,7 +137,7 @@ c1.721,0,3.35,0.677,4.552,1.874c1.228,1.233,1.905,2.862,1.905,4.583c0,3.56-2.897
                                 </div>
                             </div>
                             <div class="flex items-center justify-end mt-4">
-                                <button class="btn btn-primary d-grid w-100" type="submit">log in</button>
+                                <button class="btn btn-primary d-grid w-100" type="submit">register</button>
                             </div>
                         </form>
 

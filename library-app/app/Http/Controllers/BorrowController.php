@@ -28,7 +28,7 @@ class BorrowController extends Controller
 
             // You can update the book status or perform other actions as needed
 
-            return redirect()->route('book.index')->with('success', 'Book borrowed successfully.');
+            return redirect()->route('home')->with('success', 'Book borrowed successfully.');
         }
 
         // Redirect the user to the login page if not authenticated
