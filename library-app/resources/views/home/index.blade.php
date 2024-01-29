@@ -39,8 +39,9 @@
 
     <div class="position-relative">
         <div class="authentication-wrapper authentication-basic container-p-y">
+
             <div class="row mb-50">
-                <nav class="navbar navbar-expand-lg bg-secondary">
+                <nav class="navbar navbar-expand-lg bg-black">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="javascript:void(0)">Library Management System</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -80,6 +81,22 @@
                     </div>
                 </nav>
 
+                <!-- Hero -->
+                <div class="p-5 text-center bg-image rounded-3"
+                    style="
+background-image:  url('/assets/img/lib.avif');
+height: 400px;
+">
+                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+                        <div class="d-flex justify-content-center align-items-center h-100">
+                            <div class="text-white">
+                                <h1 class="mb-3">AF Library</h1>
+                                <h4 class="mb-3">Explore books to infinity</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hero -->
                 <!-- Help Center Header -->
                 <div class="container-xxl flex-grow-1 container-p-y">
                     <div class="card">

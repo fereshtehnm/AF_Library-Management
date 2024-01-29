@@ -50,9 +50,19 @@ class AuthController extends Controller
             return redirect()->intended('/');
         }
 
+        // Attempt to log in for users
+        if (Auth::attempt($request->only('email', 'password'), $request->filled('remember'))) {
+            return redirect()->intended('/');
+        }
+
         // Attempt to log in for staff
-        if (Auth::guard('staff')->attempt($request->only('email', 'password'), $request->filled('remember'))) {
-            return redirect()->intended('/dashboard/staff');
+        if (Auth::guard('staff')->once($request->only('email', 'password'))) {
+            return redirect()->intended('/book');
+        }
+
+        // Attempt to log in for admin
+        if (Auth::guard('admin')->once($request->only('email', 'password'))) {
+            return redirect()->intended('/staff');
         }
 
         return back()->withErrors(['email' => 'Invalid credentials']);
