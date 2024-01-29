@@ -23,21 +23,27 @@ use App\Http\Controllers\Manager\ShowController as ManagerShowController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+// Dashboard and Profile routes
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Home and Manager routes
 Route::get('/', [HomeShowController::class, 'index'])->name('index');
-
 Route::get('manager', [ManagerShowController::class, 'show'])->name('manager');
 
+Route::get('/register', [AuthController::class, 'showStaffRegistrationForm'])->name('register');
+Route::post('/register/post', [AuthController::class, 'register']);
+Route::get('/login', [AuthController::class, 'showStaffLoginForm'])->name('login');
+Route::post('/login/post', [AuthController::class, 'login']);
+
+// Staff routes
 Route::get('staff', [StaffShowController::class, 'show'])->name('staff');
 Route::prefix('staff')->group(function () {
     Route::get('/create', [StaffCreateController::class, 'create'])->name('staff.create');
@@ -46,13 +52,10 @@ Route::prefix('staff')->group(function () {
     Route::get('/edit/{id}', [StaffEditController::class, 'edit'])->name('staff.edit');
     Route::put('/update/{id}', [StaffUpdateController::class, 'update'])->name('staff.update');
     Route::delete('/delete/{staff}', [StaffDeleteController::class, 'delete'])->name('staff.delete');
-    //staff auth
-    Route::get('/register', [AuthController::class, 'showStaffRegistrationForm'])->name('staff.register');
-    Route::post('/register', [AuthController::class, 'registerStaff']);
-    Route::get('/login', [AuthController::class, 'showStaffLoginForm'])->name('staff.login');
-    Route::post('/login', [AuthController::class, 'loginStaff']);
+    // Staff authentication
 });
 
+// Book routes
 Route::get('book', [BookShowController::class, 'show'])->name('book');
 Route::prefix('book')->group(function () {
     Route::get('/create', [BookCreateController::class, 'create'])->name('book.create');
@@ -63,12 +66,11 @@ Route::prefix('book')->group(function () {
     Route::delete('/delete/{book}', [BookDeleteController::class, 'delete'])->name('book.delete');
 });
 
-
-Route::get('/register', [AuthController::class, 'showUserRegistrationForm'])->name('user.register');
-Route::post('/register', [AuthController::class, 'registerUser']);
-
-Route::get('/login', [AuthController::class, 'showUserLoginForm'])->name('user.login');
-Route::post('/login', [AuthController::class, 'loginUser']);
+// User authentication routes
+// Route::get('/register', [AuthController::class, 'showUserRegistrationForm'])->name('user.register');
+// Route::post('/register', [AuthController::class, 'registerUser']);
+// Route::get('/login', [AuthController::class, 'showUserLoginForm'])->name('user.login');
+// Route::post('/login', [AuthController::class, 'loginUser']);
 
 
 require __DIR__ . '/auth.php';
