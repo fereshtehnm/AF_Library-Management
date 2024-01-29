@@ -80,10 +80,10 @@
                 </nav>
 
                 <!-- Hero -->
-                <div class="p-5 text-center bg-image rounded-3"
+                <div class="pt-5 text-center bg-image rounded-3 mt-5"
                     style="background-image:  url('/assets/img/lib.jpg');height: 400px;">
                     <div class="mask " style="background-color: rgba(0, 0, 0, 0.2);">
-                        <div class=" mt-50 d-flex justify-content-center align-items-center h-100">
+                        <div class="  d-flex justify-content-center align-items-center h-100">
                             <div>
                                 <h1 class="mb-3 text-white">AF Library</h1>
                                 <h4 class="mb-3 text-white">Explore books to infinity</h4>
@@ -162,20 +162,7 @@
                         </div>
                         <!-- /Get to know our site -->
 
-
-
-
-
-
                         <div class="row mb-5">
-                            <div class="w-32 m-8">
-
-                                <a href="{{ url('book/create') }}">
-                                    <button type="button"
-                                        class="mb-3 btn btn-sm btn-secondary waves-effect waves-light">Add new
-                                        book</button>
-                                </a>
-                            </div>
                             @foreach ($books as $book)
                                 <div class="col-md-3 col-sm-4">
                                     <div class="card">
@@ -185,7 +172,7 @@
                                         @endphp
                                         <img class="card-img-top"
                                             src="{{ asset('assets/img/elements/' . $randomImage->getFilename()) }}"
-                                            alt="Card image cap" style="width:298px;height:150px;" />
+                                            alt="Card image cap" style="width:350px;height:150px;" />
                                         <div class="card-body">
                                             <h6 class="mt-2 text-muted">Book Name:{{ $book->name }}</h6>
                                             <h5 class="card-title"> Category:{{ $book->category }}</h5>
@@ -266,28 +253,67 @@
 
 
                         <!-- Help Area -->
-                        <div class="help-center-contact-us bg-help-center">
-                            <div class="container-xl">
-                                <div class="row justify-content-center py-5 my-4">
-                                    <div class="col-md-8 col-lg-6 text-center">
-                                        <h4>Still need help?</h4>
-                                        <p class="mb-4">
-                                            Our specialists are always happy to help. Contact us during standard
+                       
+<div class="container-xl">
+
+<div class="row justify-content-center py-5 my-4">
+
+  <div class="col-md-8 col-lg-6 text-center">
+
+    <h4>Still need help?</h4>
+
+    <p class="mb-4">
+
+    Our specialists are always happy to help. Contact us during standard
                                             business hours or email
                                             us 24/7 and we'll get back to you.
-                                        </p>
-                                        <div class="d-flex justify-content-center flex-wrap gap-4">
-                                            <a href="javascript:void(0);" class="btn btn-primary">Visit our
-                                                community</a>
-                                            <a href="javascript:void(0);" class="btn btn-primary">Contact us</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+    </p>
+
+    <div class="d-flex justify-content-center flex-wrap gap-4">
+
+      <a href="javascript:void(0);" class="btn btn-primary" onclick="showContactInfo()">Contact us</a>
+
+    </div>
+
+    <div id="contact-info" style="display:none;">
+
+      <p>Gmail: library1@gmail.com</p>
+
+      <p>Phone: 123-456-7890</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+
+
+<script>
+
+function showContactInfo() {
+
+  var contactInfo = document.getElementById("contact-info");
+
+  if (contactInfo.style.display === "none") {
+
+    contactInfo.style.display = "block";
+
+  } else {
+
+    contactInfo.style.display = "none";
+
+  }
+
+}
+
+</script>
                         <!-- /Help Area -->
 
-
+                       
                     </div>
 
 
