@@ -11,13 +11,13 @@
                 <div class="card">
                     <img class="card-img-top" src="../../assets/img/elements/7.jpg" alt="Card image cap" />
                     <div class="card-body">
-                        <h6 class="mt-2 text-muted">{{ $book->name }}</h6>
-                        <h5 class="card-title">{{ $book->category }}</h5>
+                        <h6 class="mt-2 text-muted">Book Name:{{ $book->name }}</h6>
+                        <h5 class="card-title"> Category:{{ $book->category }}</h5>
                         <p class="card-text">{{ $book->description }}</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">{{ $book->author }}</li>
-                        <li class="list-group-item">{{ $book->quantity }}</li>
+                        <li class="list-group-item">author:{{ $book->author }}</li>
+                        <li class="list-group-item">quantity:{{ $book->quantity }}</li>
                     </ul>
                     <div class="card-body">
                         <a href="{{ route('book.edit', ['id' => $book->id]) }}" class="btn btn-primary">
@@ -41,9 +41,69 @@
                                 </svg>
                             </button>
                         </form>
-                    </div>
-                </div>
-            </div>
+                            <div class="w-32 m-8">
+                            
+                                <button type="button" class="btn btn-sm btn-primary waves-effect waves-light d-right" data-bs-toggle="modal" data-bs-target="#dateTimeModal">Borrow book</button>
+                                <div class="modal fade" id="dateTimeModal" tabindex="-1" aria-labelledby="dateTimeModalLabel" aria-hidden="true">
+
+                                <div class="modal-dialog">
+
+                                    <div class="modal-content">
+
+                                    <div class="modal-header">
+
+                                        <h5 class="modal-title" id="dateTimeModalLabel">Return Time</h5>
+
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                                    </div>
+
+                                    <div class="modal-body">
+
+                                        <form>
+
+                                        <div class="mb-3">
+
+                                            <label for="dateInput" class="form-label">Date</label>
+
+                                            <input type="date" class="form-control" id="dateInput">
+
+                                        </div>
+
+                                        <div class="mb-3">
+
+                                            <label for="timeInput" class="form-label">Time</label>
+
+                                            <input type="time" class="form-control" id="timeInput">
+
+                                        </div>
+
+                                        </form>
+
+                                    </div>
+
+                                    <div class="modal-footer">
+
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+
+                                    </div>
+
+                                    </div>
+
+                                </div>
+
+                                </div>
+
+                           
+
+                            </div>
+                                                </div>
+                                            </div>
+                                        </div>
         @endforeach
+        
     </div>
+
 @endsection
