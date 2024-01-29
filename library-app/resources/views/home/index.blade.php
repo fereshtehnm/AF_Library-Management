@@ -40,8 +40,8 @@
     <div class="position-relative">
         <div class="authentication-wrapper authentication-basic container-p-y">
 
-            <div class="row mb-50">
-                <nav class="navbar navbar-expand-lg bg-black">
+            <div class="row mb-50 ">
+                <nav class="navbar navbar-expand-lg bg-secondary ">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="javascript:void(0)">Library Management System</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

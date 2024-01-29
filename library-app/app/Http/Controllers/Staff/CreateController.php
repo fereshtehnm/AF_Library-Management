@@ -32,12 +32,12 @@ class CreateController extends Controller
 
         $staff->save();
 
-        return redirect()->route('staff.index')->with('success', 'Staff created successfully');
+        return redirect()->route('staff')->with('success', 'Staff created successfully');
     }
     public function index()
     {
         // You can leave this method empty or redirect to another route if needed
-        return view('staff.index');
+        return view('staff');
     }
 
     

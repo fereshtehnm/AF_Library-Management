@@ -39,16 +39,13 @@ class AuthController extends Controller
     }
     public function login(Request $request)
     {
+
+        try {
         // Validation
         $request->validate([
             'email' => 'required|email',
             'password' => 'required|string',
         ]);
-
-        // Attempt to log in for users
-        if (Auth::attempt($request->only('email', 'password'), $request->filled('remember'))) {
-            return redirect()->intended('/');
-        }
 
         // Attempt to log in for users
         if (Auth::attempt($request->only('email', 'password'), $request->filled('remember'))) {
@@ -65,7 +62,11 @@ class AuthController extends Controller
             return redirect()->intended('/staff');
         }
 
-        return back()->withErrors(['email' => 'Invalid credentials']);
+        throw new \Exception('Invalid credentials');
+    } catch (\Exception $e) {
+        return back()->withErrors(['email' => $e->getMessage()]);
+    }
+
     }
     public function logout()
     {

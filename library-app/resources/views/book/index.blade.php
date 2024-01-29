@@ -2,6 +2,7 @@
 @section('content')
     <div class="row mb-5">
         <div class="w-32 m-8">
+
             <a href="{{ url('book/create') }}">
                 <button type="button" class="btn btn-sm btn-primary waves-effect waves-light">Add new book</button>
             </a>
@@ -41,69 +42,59 @@
                                 </svg>
                             </button>
                         </form>
-                            <div class="w-32 m-8">
-                            
-                                <button type="button" class="btn btn-sm btn-primary waves-effect waves-light d-right" data-bs-toggle="modal" data-bs-target="#dateTimeModal">Borrow book</button>
-                                <div class="modal fade" id="dateTimeModal" tabindex="-1" aria-labelledby="dateTimeModalLabel" aria-hidden="true">
+                        <div class="w-32 m-8">
+                            <button type="button" class="btn btn-sm btn-primary waves-effect waves-light d-right"
+                                data-bs-toggle="modal" data-bs-target="#dateTimeModal">Borrow book</button>
+                            @auth
 
-                                <div class="modal-dialog">
+                                <div class="modal fade" id="dateTimeModal" tabindex="-1" aria-labelledby="dateTimeModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="dateTimeModalLabel">Return Time</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="{{ route('books.borrow', ['book' => $book->id]) }}"
+                                                    method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
-                                    <div class="modal-content">
-
-                                    <div class="modal-header">
-
-                                        <h5 class="modal-title" id="dateTimeModalLabel">Return Time</h5>
-
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
-                                    </div>
-
-                                    <div class="modal-body">
-
-                                        <form>
-
-                                        <div class="mb-3">
-
-                                            <label for="dateInput" class="form-label">Date</label>
-
-                                            <input type="date" class="form-control" id="dateInput">
-
-                                        </div>
-
-                                        <div class="mb-3">
-
-                                            <label for="timeInput" class="form-label">Time</label>
-
-                                            <input type="time" class="form-control" id="timeInput">
-
-                                        </div>
-
-                                        </form>
-
-                                    </div>
-
-                                    <div class="modal-footer">
-
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-
-                                    </div>
-
-                                    </div>
-
-                                </div>
-
-                                </div>
-
-                           
-
-                            </div>
-                                                </div>
+                                                    <div class="mb-3">
+                                                        <label for="dateInput" class="form-label">Date</label>
+                                                        <input type="date" class="form-control" id="dateInput"
+                                                            name="return_date" required>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="timeInput" class="form-label">Time</label>
+                                                        <input type="time" class="form-control" id="timeInput"
+                                                            name="return_time" required>
+                                                    </div>
+                                                    <button type="submit"
+                                                        class="btn btn-sm btn-primary waves-effect waves-light d-right">
+                                                        Borrow book
+                                                    </button>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
                                             </div>
                                         </div>
-        @endforeach
-        
-    </div>
+                                    </div>
+                                </div>
+                            @else
+                                <p class="text-danger">Login to borrow a book</p>
+                            @endauth
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+
+    </div>
 @endsection

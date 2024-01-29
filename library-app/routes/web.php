@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Book;
+use App\Http\Controllers\BorrowController;
 use App\Http\Controllers\Home\ShowController as HomeShowController;
 
 use App\Http\Controllers\Book\ShowController as BookShowController;
@@ -24,15 +25,15 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 // Dashboard and Profile routes
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+// Route::middleware(['auth', 'verified'])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
 // Home and Manager routes
 Route::get('/', [HomeShowController::class, 'index'])->name('index');
@@ -44,7 +45,7 @@ Route::get('/login', [AuthController::class, 'showStaffLoginForm'])->name('login
 Route::post('/login/post', [AuthController::class, 'login']);
 
 // Staff routes
-Route::group(['middleware' => ['role:admin'], 'prefix' => 'staff'], function () {
+Route::group(['prefix' => 'staff'], function () {
     Route::get('/create', [StaffCreateController::class, 'create'])->name('staff.create');
     Route::post('/store', [StaffCreateController::class, 'store'])->name('staff.store');
     Route::get('/index', [StaffCreateController::class, 'index'])->name('staff.index');
@@ -64,6 +65,8 @@ Route::prefix('book')->group(function () {
     Route::put('/update/{id}', [BookUpdateController::class, 'update'])->name('book.update');
     Route::delete('/delete/{book}', [BookDeleteController::class, 'delete'])->name('book.delete');
 });
+
+Route::post('/books/{book}/borrow', [BorrowController::class, 'borrow'])->name('books.borrow');
 
 // User authentication routes
 // Route::get('/register', [AuthController::class, 'showUserRegistrationForm'])->name('user.register');

@@ -47,8 +47,9 @@ class CreateController extends Controller
     }
     public function index()
     {
+        $books = Book::get();
         // You can leave this method empty or redirect to another route if needed
-        return view('book.index');
+        return view('book.index', compact('books'));
     }
 }
 

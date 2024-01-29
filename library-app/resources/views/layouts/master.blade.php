@@ -143,6 +143,11 @@
                             Edit Staff
                         </a>
                     </li>
+                    <li class="menu-item">
+                        <a href="{{ url('report') }}" class="menu-link menu-toggle">
+                            Reports
+                        </a>
+                    </li>
                 </ul>
             </aside>
             <!-- / Menu -->

@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Report extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'reserve_data',
+        'return_date',
+        'book_id',
+        'user_id',
+    ];
 }
