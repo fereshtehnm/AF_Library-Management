@@ -39,24 +39,7 @@
     <div class="w-full">
         <div class="container-p-y">
             @if (session('success'))
-              
-                  <!-- Options section -->
-                  <div class="col-12 mb-4">
-                    <div class="card">
-                      <h5 class="card-header">Options</h5>
-                      {{ session('success') }}
-                      <div class="card-body">
-                        <div class="demo-inline-spacing">
-                          <button type="button" class="btn btn-primary" id="custom-image">Custom Image</button>
-                          <button type="button" class="btn btn-primary" id="auto-close">Auto Close</button>
-                          <button type="button" class="btn btn-primary" id="outside-click">Click Outside</button>
-                          <button type="button" class="btn btn-primary" id="progress-steps">Progress Steps</button>
-                          <button type="button" class="btn btn-primary" id="ajax-request">Ajax</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /Options section -->
+                {{ session('success') }}
             @endif
 
 
@@ -102,7 +85,7 @@
                 <!-- Hero -->
                 <div class="pt-5 text-center bg-image rounded-3 mt-5"
                     style="background-image:  url('/assets/img/lib.jpg');height: 400px;">
-                    <div class="mask " style="background-color: rgba(0, 0, 0, 0.2);">
+                    <div class="mask " style="background-color: rgba(0, 0, 0, 0.385);">
                         <div class="  d-flex justify-content-center align-items-center h-100">
                             <div>
                                 <h1 class="mb-3 text-white">FA Library</h1>
@@ -118,8 +101,7 @@
                     <div class="card">
                         <div
                             class=" pt-5 help-center-header d-flex flex-column justify-content-center align-items-center">
-                            <h3 class="text-center text-primary ">Hello, how can we help?</h3>
-                            <p class="text-center px-3 mb-0">Common troubleshooting topics:</p>
+                            <h3 class="text-center text-primary "> how can we help you?</h3>
                             <div class="input-wrapper my-3 input-group input-group-lg input-group-merge px-5">
                                 <span class="input-group-text" id="basic-addon1"><i
                                         class="mdi mdi-magnify mdi-20px"></i></span>
@@ -155,7 +137,7 @@
                                                     <div class="card-body text-center">
                                                         <img class="mb-3" src="../../assets/svg/icons/gift.svg"
                                                             height="60" alt="Help center landing" />
-                                                        <h5>Get To know with Our Books</h5>
+                                                        <h5>Get To know Our Books</h5>
                                                         <p>Are you a new customer wondering What our Books are?</p>
                                                         <a class="btn btn-outline-primary"
                                                             href="{{ url('/book') }}">Read More</a>
@@ -183,7 +165,7 @@
                         </div>
                         <!-- /Get to know our site -->
 
-                        <div class="row mb-5">
+                        <div class="row mb-5 mx-24">
                             @foreach ($books as $book)
                                 <div class="col-md-3 col-sm-4">
                                     <div class="card">
@@ -369,6 +351,33 @@
 
     <!-- Page JS -->
     <script src="{{ asset('assets/js/pages-auth.js') }}"></script>
+
+    <!-- jQuery script for displaying and auto-closing the alert -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Check if there is a success message in the session
+            var successMessage = "{{ session('success') }}";
+
+            if (successMessage) {
+                // Display the alert in the middle of the screen
+                var alertDiv = $(
+                    '<div class="alert alert-success alert-dismissible fade show position-fixed top-50 start-50 translate-middle text-center" role="alert" style="font-size: 20px; padding: 20px;">' +
+                    successMessage +
+                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                    '</div>');
+
+                // Append the alert to the body
+                $('body').append(alertDiv);
+
+                // Automatically close the alert after 2 seconds
+                setTimeout(function() {
+                    alertDiv.alert('close');
+                }, 2000);
+            }
+        });
+    </script>
+
 </body>
 
 </html>
