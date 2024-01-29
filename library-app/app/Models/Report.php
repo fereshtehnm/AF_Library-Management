@@ -15,4 +15,8 @@ class Report extends Model
         'book_id',
         'user_id',
     ];
+    public function book()
+    {
+        return $this->belongsTo(Book::class);
+    }
 }

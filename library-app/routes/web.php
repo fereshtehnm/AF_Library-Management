@@ -3,6 +3,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Book;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\Report\ShowController as ReportShowController;
+
 use App\Http\Controllers\BorrowController;
 use App\Http\Controllers\Home\ShowController as HomeShowController;
 
@@ -67,6 +70,8 @@ Route::prefix('book')->group(function () {
 });
 
 Route::post('/books/{book}/borrow', [BorrowController::class, 'borrow'])->name('books.borrow');
+
+Route::get('/report', [ReportShowController::class, 'show'])->name('report.show');
 
 // User authentication routes
 // Route::get('/register', [AuthController::class, 'showUserRegistrationForm'])->name('user.register');
