@@ -38,6 +38,27 @@
 
     <div class="w-full">
         <div class="container-p-y">
+            @if (session('success'))
+              
+                  <!-- Options section -->
+                  <div class="col-12 mb-4">
+                    <div class="card">
+                      <h5 class="card-header">Options</h5>
+                      {{ session('success') }}
+                      <div class="card-body">
+                        <div class="demo-inline-spacing">
+                          <button type="button" class="btn btn-primary" id="custom-image">Custom Image</button>
+                          <button type="button" class="btn btn-primary" id="auto-close">Auto Close</button>
+                          <button type="button" class="btn btn-primary" id="outside-click">Click Outside</button>
+                          <button type="button" class="btn btn-primary" id="progress-steps">Progress Steps</button>
+                          <button type="button" class="btn btn-primary" id="ajax-request">Ajax</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /Options section -->
+            @endif
+
 
             <div class="row mb-50  ">
                 <nav class="navbar navbar-expand-lg bg-secondary fixed-top ">

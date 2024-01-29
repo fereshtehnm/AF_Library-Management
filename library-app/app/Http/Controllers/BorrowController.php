@@ -26,9 +26,9 @@ class BorrowController extends Controller
                 'user_id' => Auth::id(),
             ]);
 
-            // You can update the book status or perform other actions as needed
+            $request->session()->flash('success', 'Book borrowed successfully.');
 
-            return redirect()->route('home')->with('success', 'Book borrowed successfully.');
+            return redirect()->route('index')->with('success', 'Book borrowed successfully.');
         }
 
         // Redirect the user to the login page if not authenticated
