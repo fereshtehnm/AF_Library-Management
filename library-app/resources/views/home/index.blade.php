@@ -107,6 +107,15 @@
                   </div>
                 </div>
                 <!-- /Get to know our site -->
+
+
+
+
+
+
+
+
+
                  <!-- Help Area -->
                  <div class="help-center-contact-us bg-help-center">
                   <div class="container-xl">
@@ -126,7 +135,32 @@
                   </div>
                 </div>
                 <!-- /Help Area -->
-</div>
+        </div>
+
+        <div class="container-xxl flex-grow-1 container-p-y">
+              <h4 class="fw-semibold pt-3 mb-1">Permissions List</h4>
+
+              <p class="mb-4">
+                Each category (Basic, Professional, and Business) includes the four predefined roles shown below.
+              </p>
+
+              <!-- Permission Table -->
+              <div class="card">
+                <div class="card-datatable table-responsive">
+                  <table class="datatables-permissions table">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Categories</th>
+                      </tr>
+                      </thead>
+       
+                      
+                  
+                  </table>
+                </div>
+              </div>
 </div>
 <!-- Footer -->
 <footer class="content-footer footer bg-footer-theme">
