@@ -171,7 +171,7 @@
                     <!-- /Logo -->
 
                     <div class="card-body mt-2">
-                        <h4 class="mb-4 fw-semibold">خوش آمدید به مدیریت بازار مج 👋</h4>
+                        <h4 class="mb-4 fw-semibold">welcome 👋</h4>
 
                         <form method="POST" action="{{ url('login/post') }}">
                             @csrf

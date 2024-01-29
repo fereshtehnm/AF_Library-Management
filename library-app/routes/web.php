@@ -44,16 +44,15 @@ Route::get('/login', [AuthController::class, 'showStaffLoginForm'])->name('login
 Route::post('/login/post', [AuthController::class, 'login']);
 
 // Staff routes
-Route::get('staff', [StaffShowController::class, 'show'])->name('staff');
-Route::prefix('staff')->group(function () {
+Route::group(['middleware' => ['role:admin'], 'prefix' => 'staff'], function () {
     Route::get('/create', [StaffCreateController::class, 'create'])->name('staff.create');
     Route::post('/store', [StaffCreateController::class, 'store'])->name('staff.store');
     Route::get('/index', [StaffCreateController::class, 'index'])->name('staff.index');
     Route::get('/edit/{id}', [StaffEditController::class, 'edit'])->name('staff.edit');
     Route::put('/update/{id}', [StaffUpdateController::class, 'update'])->name('staff.update');
     Route::delete('/delete/{staff}', [StaffDeleteController::class, 'delete'])->name('staff.delete');
-    // Staff authentication
 });
+Route::get('staff', [StaffShowController::class, 'show'])->name('staff');
 
 // Book routes
 Route::get('book', [BookShowController::class, 'show'])->name('book');
