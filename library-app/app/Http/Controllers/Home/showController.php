@@ -4,13 +4,18 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Book;
+
 
 class showController extends Controller
 {
     public function index()
     {
-        // Your index logic here
-        return view('home.index'); // Assuming your view file is in the 'home' folder
+        // Fetch books from the database
+        $books = Book::paginate(10);
+
+        // Pass books data to the view
+        return view('home.index', compact('books'));
     }
   
     public function show()
@@ -18,3 +23,4 @@ class showController extends Controller
         return redirect()->route('index');
     }
 }
+  
