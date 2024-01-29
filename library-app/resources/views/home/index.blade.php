@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa" class="light-style customizer-hide" dir="rtl" data-theme="theme-default"
+<html lang="fa" class="light-style customizer-hide" dir="ltr" data-theme="theme-default"
     data-template="horizontal-menu-template">
 
 <head>
