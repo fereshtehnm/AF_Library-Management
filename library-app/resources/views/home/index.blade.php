@@ -40,8 +40,8 @@
     <div class="position-relative">
         <div class="authentication-wrapper authentication-basic container-p-y">
 
-            <div class="row mb-50 ">
-                <nav class="navbar navbar-expand-lg bg-secondary ">
+            <div class="row mb-50  ">
+                <nav class="navbar navbar-expand-lg bg-secondary fixed-top ">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="javascript:void(0)">Library Management System</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -83,10 +83,7 @@
 
                 <!-- Hero -->
                 <div class="p-5 text-center bg-image rounded-3"
-                    style="
-background-image:  url('/assets/img/lib.jpg');
-height: 400px;
-">
+                    style="background-image:  url('/assets/img/lib.jpg');height: 400px;">
                     <div class="mask " style="background-color: rgba(0, 0, 0, 0.2);">
                         <div class=" mt-50 d-flex justify-content-center align-items-center h-100">
                             <div>
@@ -97,11 +94,12 @@ height: 400px;
                     </div>
                 </div>
                 <!-- Hero -->
+                
                 <!-- Help Center Header -->
                 <div class="container-xxl flex-grow-1 container-p-y">
                     <div class="card">
-                        <div class="help-center-header d-flex flex-column justify-content-center align-items-center">
-                            <h3 class="text-center text-primary pt-50">Hello, how can we help?</h3>
+                        <div class=" pt-5 help-center-header d-flex flex-column justify-content-center align-items-center">
+                            <h3 class="text-center text-primary ">Hello, how can we help?</h3>
                             <p class="text-center px-3 mb-0">Common troubleshooting topics:</p>
                             <div class="input-wrapper my-3 input-group input-group-lg input-group-merge px-5">
                                 <span class="input-group-text" id="basic-addon1"><i
